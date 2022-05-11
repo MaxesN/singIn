@@ -1,11 +1,12 @@
 import { FC } from "react"
 
 type Props = {
+    className?: string
     isChecked: boolean
-    setChecked: () => void
+    onCheckedChange: () => void
 }
-export const Checkbox:FC<Props> = ({isChecked, setChecked}) => {
+export const Checkbox:FC<Props> = ({isChecked, onCheckedChange, className}) => {
   return(
-    <input checked={isChecked} onClick={setChecked} className="tw3-w-[21px] focus:tw3-outline-none tw3-h-[21px]" type="checkbox" />
+    <input checked={isChecked} onChange={onCheckedChange} className={`tw3-w-[21px] focus:tw3-outline-none tw3-h-[21px] ${className}`} type="checkbox" />
   )
 }
