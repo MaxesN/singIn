@@ -4,6 +4,7 @@ import { Checkbox } from "../components/Checkbox"
 import { Input } from "../components/Input"
 import { Modal } from "../components/Modal"
 import { Wrapper } from "../components/Wrapper"
+import logoStress from "../assets/logoStress.png"
 
 type EventChange = ChangeEvent<HTMLInputElement>
 
@@ -25,6 +26,7 @@ export const SignIn: FC = () => {
   const onChangeActiveModal = (e: MouseEvent) => {
     setIsActiveModal(!isActiveModal)
     setIsSendedModal(false)
+    setEmailModal('')
   }
   const onChangeSendedModal = () => setIsSendedModal(!isSendedModal)
   const onСhangeEmailModal = (e: EventChange) => setEmailModal(e.target.value)
@@ -44,7 +46,7 @@ export const SignIn: FC = () => {
               <Input value={password} onChangeVisible={onChangeVisible} onChangeValue={onСhangePassword} placeholder="Slaptažodis turi būti sudarytas iš 6 ar daugiau raidžių ir skaičių." type="password" isValid={password.length > 5 || password.length === 0} isVisible={isVisible} />
             </div>
             <div className="tw3-flex tw3-mt-1 tw3-justify-between ">
-              <div className="tw3-flex  tw3-items-center ">
+              <div className="tw3-flex   ">
                 <Checkbox className="tw3-mr-3" isChecked={isChecked} onCheckedChange={onChangeСhecked}/>
                 <span className="tw3-text-sm">Kad mane prisimintų</span>
               </div>
@@ -52,7 +54,12 @@ export const SignIn: FC = () => {
             </div>
           </form>
           <Button className="tw3-mt-10">Prisijungti</Button>
-          <div className="tw3-text-sm tw3-mt-6">Neturite paskyros? <a href="/" className="tw3-text-[#0284C7] tw3-font-semibold">Sukurti paskyrą</a></div>
+          <div className="tw3-text-sm tw3-text-center tw3-mt-6">Neturite paskyros? <a href="/" className="tw3-text-[#0284C7] tw3-font-semibold">Sukurti paskyrą</a></div>
+          <div className="tw3-text-center tw3-mt-7 tw3-relative">
+            <p className="tw3-absolute tw3-text-[#000]/30 tw3-px-4 tw3-bg-[#fff] tw3-top-[-13px] tw3-left-[40%]">Partneriai</p>
+            <hr />
+          </div>
+          <div className="tw3-mt-7"><img className="tw3-mx-auto" src={logoStress} alt="logoStress" /></div>
         </div>
       </Wrapper>
       <Modal onChangeActive={onChangeActiveModal} onChangeSended={onChangeSendedModal} onChangeValue={onСhangeEmailModal}  value={emailModal} isActive={isActiveModal} isSended={isSendedModal} />
