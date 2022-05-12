@@ -1,9 +1,5 @@
 import { ChangeEvent, FC, MouseEvent, useState } from "react"
-import { Button } from "../components/Button"
-import { Checkbox } from "../components/Checkbox"
-import { Input } from "../components/Input"
-import { Modal } from "../components/Modal"
-import { Wrapper } from "../components/Wrapper"
+import { Button, Checkbox, Input, Modal, Wrapper } from "../components/index"
 import logoStress from "../assets/logoStress.png"
 
 type EventChange = ChangeEvent<HTMLInputElement>
@@ -50,13 +46,13 @@ export const SignIn: FC = () => {
                 <Checkbox className="tw3-mr-3" isChecked={isChecked} onCheckedChange={onChangeСhecked}/>
                 <span className="tw3-text-sm">Kad mane prisimintų</span>
               </div>
-              <span onClick={onChangeActiveModal}  className="tw3-text-[#0284C7] tw3-text-sm tw3-cursor-pointer tw3-font-semibold">Pamiršai slaptažodį?</span>
+              <span onClick={onChangeActiveModal}  className="tw3-text-sky-700 tw3-text-sm tw3-cursor-pointer tw3-font-semibold">Pamiršai slaptažodį?</span>
             </div>
           </form>
           <Button className="tw3-mt-10">Prisijungti</Button>
-          <div className="tw3-text-sm tw3-text-center tw3-mt-6">Neturite paskyros? <a href="/" className="tw3-text-[#0284C7] tw3-font-semibold">Sukurti paskyrą</a></div>
+          <div className="tw3-text-sm tw3-text-center tw3-mt-6">Neturite paskyros? <a href="/" className="tw3-text-sky-700 tw3-font-semibold">Sukurti paskyrą</a></div>
           <div className="tw3-text-center tw3-mt-7 tw3-relative">
-            <p className="tw3-absolute tw3-text-[#000]/30 tw3-px-4 tw3-bg-[#fff] tw3-top-[-13px] tw3-left-[40%]">Partneriai</p>
+            <p className="tw3-absolute tw3-text-black/30 tw3-px-4 tw3-bg-white tw3-top-[-13px] tw3-left-[40%]">Partneriai</p>
             <hr />
           </div>
           <div className="tw3-mt-7"><img className="tw3-mx-auto" src={logoStress} alt="logoStress" /></div>

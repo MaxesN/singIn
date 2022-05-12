@@ -17,15 +17,15 @@ export const Modal: FC<Props> = ({isActive, isSended, onChangeSended, onChangeAc
   return (
     <>
       {
-        <div onClick={onChangeActive} className={ isActive ? "tw3-w-full  tw3-bg-[#000]/40 tw3-h-full tw3-fixed tw3-top-0" : 'tw3-hidden'}>
-          <div onClick={(e) => e.stopPropagation()} className="tw3-shadow-md tw3-p-10 tw3-bg-[#fff] tw3-rounded-lg tw3-max-w-[535px] tw3-mx-auto tw3-relative tw3-top-1/3">
+        <div onClick={onChangeActive} className={ isActive ? "tw3-w-full  tw3-bg-black/40 tw3-h-full tw3-fixed tw3-top-0" : 'tw3-hidden'}>
+          <div onClick={(e) => e.stopPropagation()} className="tw3-shadow-md tw3-p-10 tw3-bg-white tw3-rounded-lg tw3-max-w-[535px] tw3-mx-auto tw3-relative tw3-top-1/3">
             {!isSended 
               ? <>
-                <p className="tw3-text-3xl tw3-font-medium">Atstatyti slaptažodį</p>
+                <p className="tw3-text-3xl  tw3-font-medium">Atstatyti slaptažodį</p>
                 <p className="tw3-mt-6">Toliau įveskite savo el. pašto adresą ir mes atsiųsime jums el. laišką su instrukcijomis, kaip iš naujo nustatyti slaptažodį.</p>
                 <p className="tw3-mt-6 tw3-mb-2 tw3-font-semibold">El. paštas</p>
                 <Input value={value} onChangeValue={onChangeValue} placeholder="El. paštas" type="email" isValid={value.length > 5 || value.length === 0}/>
-                <button onClick={value.length > 5 ? onChangeSended : undefined} className={` tw3-mt-2 tw3-duration-200 focus:tw3-outline-none  tw3-rounded-md tw3-text-[#fff] tw3-py-2 tw3-px-4 ${value.length > 5 ? 'hover:tw3-bg-[#0a756c] tw3-bg-[#0D9488]' : 'tw3-bg-[#0D9488]/50'}`}>Pateikti</button>
+                <button onClick={value.length > 5 ? onChangeSended : undefined} className={` tw3-mt-2 tw3-duration-200 focus:tw3-outline-none  tw3-rounded-md tw3-text-white tw3-py-2 tw3-px-4 ${value.length > 5 ? 'hover:tw3-bg-teal-700 tw3-bg-teal-600' : 'tw3-bg-teal-600/50'}`}>Pateikti</button>
               </> 
               : 
               <div className="tw3-flex tw3-items-start">

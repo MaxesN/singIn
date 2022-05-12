@@ -1,10 +1,7 @@
-import { ChangeEvent, useState } from "react"
-import { Button } from "../components/Button"
-import { Checkbox } from "../components/Checkbox"
-import { Input } from "../components/Input"
-import { Wrapper } from "../components/Wrapper"
+import { ChangeEvent, FC, useState } from "react"
+import { Button, Checkbox, Input, Wrapper } from "../components/index"
 
-export const SignUp = () => {
+export const SignUp: FC = () => {
 
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
@@ -53,12 +50,12 @@ export const SignUp = () => {
           </div>
           <div className="tw3-flex">
             <Checkbox className="tw3-mr-3" isChecked={isChecked} onCheckedChange={onChangeChecked}/>
-            <span className="tw3-text-sm">Sutinku su sąlygomis. Sužinokite, kaip naudojame ir saugome jūsų duomenis mūsų <a className="tw3-text-[#0284C7]" href="/"> privatumo politikoje.</a> </span>
+            <span className="tw3-text-sm">Sutinku su sąlygomis. Sužinokite, kaip naudojame ir saugome jūsų duomenis mūsų <a className="tw3-text-sky-700" href="/"> privatumo politikoje.</a> </span>
           </div>
         </form>
         <Button className="tw3-mt-10">Prisijungti</Button>
         <div className="tw3-text-center tw3-mt-6">
-          <a href="/" className="tw3-text-sm tw3-text-[#0284C7] " >Jau užregistruotas</a>
+          <a href="/" className="tw3-text-sm tw3-text-sky-700 " >Jau užregistruotas</a>
         </div>
       </div>
     </Wrapper>
